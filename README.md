@@ -17,8 +17,6 @@ git clone https://github.com/sergioserbluk/mini-arenasync-historias-de-usuario-h
 cd <repositorio>
 ```
 
-> Reemplaza `<usuario>` y `<repositorio>` con el nombre de tu cuenta y el nombre real del repositorio.
-
 ## Requisitos
 
 - Python 3.8 o superior
