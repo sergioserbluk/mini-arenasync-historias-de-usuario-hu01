@@ -1,27 +1,56 @@
 # Mini ArenaSync Voley
 
-Aplicacion web para administrar y mostrar un tablero de voley sincronizado en tiempo real.
+Aplicación web para administrar y mostrar un tablero de vóley sincronizado en tiempo real.
 
-## Funciones
+## Descarga desde GitHub
 
-- Panel de operador en `/control`.
-- Tablero publico en `/tablero`, sin controles.
-- Historial de partidos finalizados en `/resultados`.
-- Modalidad 2 de 3 o 3 de 5 sets.
-- Deteccion automatica de set ganado con 25 puntos y diferencia de 2.
-- Correccion de puntos y reversion del ultimo set cerrado.
-- Guardado de resultados en `data/resultados.json`, con puntos del ultimo set, puntos totales y diferencia.
+1. Abrir una terminal o PowerShell.
+2. Clonar el repositorio:
 
-## Ejecutar
+```bash
+git clone https://github.com/sergioserbluk/mini-arenasync-historias-de-usuario-hu01.git
+```
+
+3. Cambiar al directorio del proyecto:
+
+```bash
+cd <repositorio>
+```
+
+> Reemplaza `<usuario>` y `<repositorio>` con el nombre de tu cuenta y el nombre real del repositorio.
+
+## Requisitos
+
+- Python 3.8 o superior
+- `git` instalado en el equipo
+
+## Configuración local
+
+1. Crear el entorno virtual:
 
 ```bash
 python -m venv venv
+```
+
+2. Activar el entorno virtual en Windows:
+
+```bash
 venv\Scripts\activate
+```
+
+3. Instalar dependencias:
+
+```bash
 pip install -r requirements.txt
+```
+
+## Ejecutar la aplicación
+
+```bash
 python app.py
 ```
 
-Luego abrir:
+Luego abrir en el navegador:
 
 - `http://127.0.0.1:5000/control`
 - `http://127.0.0.1:5000/tablero`
@@ -29,6 +58,18 @@ Luego abrir:
 
 ## Pruebas
 
+Para ejecutar los tests del proyecto:
+
 ```bash
 pytest
 ```
+
+## Funciones principales
+
+- Panel de operador en `/control`
+- Tablero público en `/tablero`, sin controles
+- Historial de partidos finalizados en `/resultados`
+- Modalidad 2 de 3 o 3 de 5 sets
+- Detección automática de set ganado con 25 puntos y diferencia de 2
+- Corrección de puntos y reversión del último set cerrado
+- Guardado de resultados en `data/resultados.json`, con puntos del último set, puntos totales y diferencia

@@ -61,6 +61,11 @@ document.querySelectorAll("[data-equipo][data-accion]").forEach((boton) => {
         } catch (err) {
             error.textContent = err.message;
         }
+
+
+
+
+        
     });
 });
 
