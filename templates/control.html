@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Control | Mini ArenaSync{% endblock %}
+
+{% block content %}
+<section class="control-layout">
+    <div class="panel">
+        <h1>Panel del operador</h1>
+        <form id="form-iniciar" class="form-grid">
+            <label>
+                Equipo A
+                <input id="equipo-a" name="equipo_a" type="text" autocomplete="off" required>
+            </label>
+            <label>
+                Equipo B
+                <input id="equipo-b" name="equipo_b" type="text" autocomplete="off" required>
+            </label>
+            <fieldset>
+                <legend>Modalidad</legend>
+                <label class="radio-row">
+                    <input type="radio" name="modalidad" value="2_de_3" checked>
+                    2 de 3 sets
+                </label>
+                <label class="radio-row">
+                    <input type="radio" name="modalidad" value="3_de_5">
+                    3 de 5 sets
+                </label>
+            </fieldset>
+            <button class="primary" type="submit">Iniciar partido</button>
+            <p id="error" class="error" role="alert"></p>
+        </form>
+    </div>
+
+    <div class="panel">
+        <h2>Marcador</h2>
+        <div class="score-control">
+            <article class="team-control">
+                <h3 id="nombre-a">Equipo A</h3>
+                <p><strong id="puntos-a">0</strong> puntos</p>
+                <p><strong id="sets-a">0</strong> sets</p>
+                <div class="button-row">
+                    <button data-equipo="a" data-accion="sumar">+ Punto</button>
+                    <button data-equipo="a" data-accion="restar">- Punto</button>
+                </div>
+            </article>
+            <article class="team-control">
+                <h3 id="nombre-b">Equipo B</h3>
+                <p><strong id="puntos-b">0</strong> puntos</p>
+                <p><strong id="sets-b">0</strong> sets</p>
+                <div class="button-row">
+                    <button data-equipo="b" data-accion="sumar">+ Punto</button>
+                    <button data-equipo="b" data-accion="restar">- Punto</button>
+                </div>
+            </article>
+        </div>
+        <div class="action-row">
+            <button id="reiniciar-puntos">Reiniciar puntos</button>
+            <button id="finalizar" class="danger">Finalizar partido</button>
+        </div>
+        <p id="estado" class="status">Sin partido activo</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/socket.js') }}"></script>
+<script src="{{ url_for('static', filename='js/control.js') }}"></script>
+{% endblock %}

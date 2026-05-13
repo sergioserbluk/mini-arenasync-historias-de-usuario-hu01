@@ -1,0 +1,27 @@
+[
+  {
+    "equipo_a": "titanes",
+    "equipo_b": "picapiedras",
+    "sets_a": 1,
+    "sets_b": 2,
+    "puntos_a": 0,
+    "puntos_b": 0,
+    "modalidad": "2 de 3 sets",
+    "fecha_hora": "2026-05-08T10:46:58",
+    "ganador": "b"
+  },
+  {
+    "equipo_a": "ORCAS",
+    "equipo_b": "PANTERAS",
+    "sets_a": 2,
+    "sets_b": 0,
+    "puntos_a": 0,
+    "puntos_b": 0,
+    "puntos_totales_a": 50,
+    "puntos_totales_b": 17,
+    "diferencia_puntos": 33,
+    "modalidad": "2 de 3 sets",
+    "fecha_hora": "2026-05-11T06:05:51",
+    "ganador": "a"
+  }
+]

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Resultados | Mini ArenaSync{% endblock %}
+
+{% block content %}
+<section class="panel results">
+    <h1>Historial de partidos</h1>
+    {% if resultados %}
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha y hora</th>
+                        <th>Equipos</th>
+                        <th>Sets</th>
+                        <th>Puntos del ultimo set</th>
+                        <th>Puntos totales</th>
+                        <th>Diferencia</th>
+                        <th>Modalidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for resultado in resultados|reverse %}
+                    <tr>
+                        <td>{{ resultado.fecha_hora }}</td>
+                        <td>{{ resultado.equipo_a }} vs {{ resultado.equipo_b }}</td>
+                        <td>{{ resultado.sets_a }} - {{ resultado.sets_b }}</td>
+                        <td>{{ resultado.puntos_a }} - {{ resultado.puntos_b }}</td>
+                        <td>{{ resultado.puntos_totales_a|default(resultado.puntos_a) }} - {{ resultado.puntos_totales_b|default(resultado.puntos_b) }}</td>
+                        <td>{{ resultado.diferencia_puntos|default((resultado.puntos_totales_a|default(resultado.puntos_a)) - (resultado.puntos_totales_b|default(resultado.puntos_b))) }}</td>
+                        <td>{{ resultado.modalidad }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="empty">Todavia no hay partidos guardados.</p>
+    {% endif %}
+</section>
+{% endblock %}

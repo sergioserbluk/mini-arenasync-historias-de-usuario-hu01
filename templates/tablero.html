@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Tablero | Mini ArenaSync{% endblock %}
+
+{% block content %}
+<section class="board" aria-live="polite">
+    <div class="board-team">
+        <span>Equipo A</span>
+        <h1 id="nombre-a">Equipo A</h1>
+        <div class="board-points" id="puntos-a">0</div>
+        <p><strong id="sets-a">0</strong> sets</p>
+    </div>
+    <div class="board-center">
+        <p id="modalidad">2 de 3 sets</p>
+        <strong id="estado">Sin partido activo</strong>
+    </div>
+    <div class="board-team">
+        <span>Equipo B</span>
+        <h1 id="nombre-b">Equipo B</h1>
+        <div class="board-points" id="puntos-b">0</div>
+        <p><strong id="sets-b">0</strong> sets</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/socket.js') }}"></script>
+<script src="{{ url_for('static', filename='js/tablero.js') }}"></script>
+{% endblock %}
